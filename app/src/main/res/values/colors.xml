@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4DB6AC</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#39A2D1</color>
+
+    <color name="nav_bg">#F7F7F7</color>
+    <color name="main_color">#39A2D1</color>
+    <color name="main_line">#D5D5D5</color>
+    <color name="main_bg">#f0f0f0</color>
+    <color name="main_light_red">#E16262</color>
+    <color name="main_pink">#F06292</color>
+    <color name="main_red">#CD5858</color>
+    <color name="main_orange">#FF8A65</color>
+    <color name="main_green">#9CCC65</color>
+    <color name="main_right_blue">#42A5F5</color>
+    <color name="main_dark_blue">#039BE5</color>
+    <color name="main_light_green">#4DB6AC</color>
+
+    <color name="calculator_btn_bg_1">#F6F6F6</color>
+    <color name="calculator_btn_bg_2">#E9E9E9</color>
+    <color name="calculator_line">#979797</color>
+
+    <color name="nav_title">#000000</color>
+    <color name="text_normal">#4A4A4A</color>
+    <color name="text_light">#797979</color>
+    <color name="text_blue">#39A2D1</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <color name="text_calculator">#000000</color>
+    <color name="text_calculator_nb">#4A4A4A</color>
+
+    <color name="main_write">#FFFFFF</color>
+    <color name="main_black">#000000</color>
+    <color name="main_brown">#656465</color>
+    <color name="light_gray">#C9C9C9</color>
+    <color name="image_bg">#322825</color>
+
+    <color name="google_blue">#2196F3</color>
+    <color name="google_green">#4CAF50</color>
+    <color name="google_red">#F44336</color>
+    <color name="google_yellow">#FFEB3B</color>
+    <color name="color_f1f1f1">#F1F1F1</color>
+    <color name="liveChannelTextColor60">#99f1f1f1</color>
+    <color name="color_33d8d8d8">#33d8d8d8</color>
+    <color name="color_search_line">#19d8d8d8</color>
+    <color name="color_ffffff">#FFFFFF</color>
+    <color name="color_66d8d8d8">#66D8D8D8</color>
+    <color name="gray_light_alpha">#9B9B9B96</color>
+
+
+
+
+</resources>

@@ -1,0 +1,32 @@
+/local.properties
+/.idea/workspace.xml
+.DS_Store
+
+# IntelliJ files
+.idea
+*.iml
+
+# gradle directory
+.gradle
+build/
+/gradle/
+gradlew
+gradlew.bat
+gradle.properties
+
+bin/*
+out/*
+
+*.apk
+*.ap_
+
+# lint files
+lint.xml
+
+# vi swap files
+*.swp
+
+# backup files
+*.bak
+
+*.hprof

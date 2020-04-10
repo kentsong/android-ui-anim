@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">android-ui-anim</string>
+    <string name="all_dialog_confirm">確認</string>
+    <string name="all_dialog_cancel">取消</string>
+    <string name="progress_loading">讀取中</string>
+
+    <string name="main_action_recycler_view">RecyclerView</string>
+    <string name="main_action_multi_recycler_view">Multi RecyclerView</string>
+    <string name="main_action_listview">ListView</string>
+    <string name="main_action_alarm_manager">Alarm Manager</string>
+    <string name="main_action_navigation_drawer">Navigation Drawer</string>
+    <string name="main_action_tablayout_view_pager">TabLayout + ViewPager</string>
+    <string name="main_action_CardView">CardView</string>
+    <string name="main_action_Retrofit">Retrofit</string>
+    <string name="main_action_OKHttp">OKHttp</string>
+    <string name="main_action_EventBus">EventBus</string>
+    <string name="main_action_Dialog">Dialog</string>
+    <string name="main_action_LoadMore">LoadMore</string>
+    <string name="main_action_circlepage_indicator_viewpager">CirclePageIndicator + ViewPager</string>
+    <string name="main_action_constraint_layout">Constraint Layout</string>
+    <string name="main_action_style_selector">Style Selector</string>
+    <string name="main_action_ui_response">UI Response</string>
+    <string name="main_action_marquee_view">Marquee View</string>
+    <string name="main_action_lifecycle_owner_view">LifeCycle Owner</string>
+    <string name="main_action_scroll_rv">RecyclerView Scroll</string>
+    <string name="main_action_arc_room">Arc Room</string>
+    <string name="main_action_mvvm">MVVM Demo</string>
+    <string name="main_action_udp">UDP Demo</string>
+    <string name="main_action_rxjava_anim">RxJava Anim Demo</string>
+    <string name="main_action_customize_view">Customize View</string>
+    <string name="main_action_transitiondrawable">TransitionDrawable</string>
+    <string name="main_action_greendao">GreenDAO Demo</string>
+    <string name="main_action_reflect_ioc">Reflect_Ioc</string>
+    <string name="main_action_eventbus_manual">EventBus Manual Demo</string>
+    <string name="main_action_okhttp_manual">Okhttp Manual Demo</string>
+    <string name="main_action_glide_manual">glide Manual Demo</string>
+    <string name="main_action_shell_demo">Shell Demo</string>
+
+    <string name="main_action_ui_touch_move">UI TouchMove</string>
+    <string name="main_action_ui_touch_move_2">UI TouchMove_2</string>
+
+
+    <string name="main_type_android_arc">Andorid Arc</string>
+
+
+</resources>
