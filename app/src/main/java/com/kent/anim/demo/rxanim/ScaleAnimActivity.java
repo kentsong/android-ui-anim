@@ -43,6 +43,8 @@ public class ScaleAnimActivity extends AppCompatActivity {
     @BindView(R.id.btn_action1)
     Button btnAction1;
 
+    private float temp;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,9 +79,9 @@ public class ScaleAnimActivity extends AppCompatActivity {
     //属性动画
     private AnimatorSet genAnimatorSet(View targetView) {
         //改变 scaleX
-        return genAnimatorSetPlan1(targetView);
-        //改变 width、height
-//        return genAnimatorSetPlan2(targetView);
+//        return genAnimatorSetPlan1(targetView);
+//        改变 width、height
+        return genAnimatorSetPlan2(targetView);
     }
 
     private AnimatorSet genAnimatorSetPlan2(View targetView) {
@@ -91,7 +93,7 @@ public class ScaleAnimActivity extends AppCompatActivity {
         int targetWidth = 400;
         int targetHeight = 300;
         float targetX = 200f;
-        float targetY = 100f;
+        float targetY = 200f;
 
         Log.d(TAG, "desktopBootAd-genAnimation-targetWidth=" + targetWidth + ", targetHeight="
                 + targetHeight);
@@ -135,29 +137,24 @@ public class ScaleAnimActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
-        animSet.setDuration(1200);
-        animSet.playTogether(/**anim1, anim2**/ anim3, anim4);
+        animSet.setDuration(600);
+        animSet.playTogether(/**anim1, anim2**/anim3, anim4);
         animSet.setInterpolator(new Interpolator() {
             @Override
             public float getInterpolation(float input) {
+                if (input == temp) {
+                    return input;
+                }
+                temp = input;
                 //TODO 不建议采用，不断重绘造成效能低落，并且逻辑没错系统还算错，有并发 requestLayout 情况
                 Float width = 1920 - (1920 - targetWidth) * input;
                 Float height = 1080 - (1080 - targetHeight) * input;
                 Log.d("ScaleAnimActivity", "width =" + width);
-                if(input == 1L){
-                    ViewGroup.LayoutParams layoutParams = targetView.getLayoutParams();
-                    layoutParams.height = 300;
-                    layoutParams.width = 400;
-                    targetView.setLayoutParams(layoutParams);
-                    targetView.requestLayout();
-                } else {
-
-                    ViewGroup.LayoutParams layoutParams = targetView.getLayoutParams();
-                    layoutParams.height = height.intValue();
-                    layoutParams.width = width.intValue();
-                    targetView.setLayoutParams(layoutParams);
-                    targetView.requestLayout();
-                }
+                ViewGroup.LayoutParams layoutParams = targetView.getLayoutParams();
+                layoutParams.height = height.intValue();
+                layoutParams.width = width.intValue();
+                targetView.setLayoutParams(layoutParams);
+                targetView.requestLayout();
                 Log.d("ScaleAnimActivity", "getInterpolation =" + input);
                 return input;
             }
@@ -166,14 +163,34 @@ public class ScaleAnimActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
-//                targetView.requestLayout();
                 int w = targetView.getWidth();
                 int h = targetView.getHeight();
+
                 Log.d("ScaleAnimActivity", "end w=" + w + ",h=" + h);
                 Log.d("ScaleAnimActivity", "x=" + targetView.getX());
                 Log.d("ScaleAnimActivity", "y=" + targetView.getY());
                 Log.d("ScaleAnimActivity", "PivotX=" + targetView.getPivotX());
                 Log.d("ScaleAnimActivity", "PivotY=" + targetView.getPivotY());
+
+                //动画结束时，有些许偏差需重定位
+                targetView.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ViewGroup.LayoutParams layoutParams = targetView.getLayoutParams();
+                        layoutParams.height = targetHeight;
+                        layoutParams.width = targetWidth;
+                        targetView.setLayoutParams(layoutParams);
+                        targetView.setX(targetX);
+                        targetView.setY(targetY);
+                        targetView.requestLayout();
+
+                        Log.d("ScaleAnimActivity", "delay end w=" + w + ",h=" + h);
+                        Log.d("ScaleAnimActivity", "x=" + targetView.getX());
+                        Log.d("ScaleAnimActivity", "y=" + targetView.getY());
+                        Log.d("ScaleAnimActivity", "PivotX=" + targetView.getPivotX());
+                        Log.d("ScaleAnimActivity", "PivotY=" + targetView.getPivotY());
+                    }
+                }, 50);
             }
 
             @Override
